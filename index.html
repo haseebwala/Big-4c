@@ -3,310 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Big4 Consultancy | Saudi Arabia & Bahrain</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Custom CSS -->
+    <title>Corporate Services Accordion</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="container nav-wrapper">
-            <a href="#" class="logo">
-                <i class="fa-solid fa-chart-line"></i>
-                <span>Big4 <span style="color:var(--accent)">Consultancy</span></span>
-            </a>
-            <div class="mobile-toggle" id="mobile-menu-btn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-            <nav class="nav-links" id="nav-links">
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#clients">Clients</a>
-                <a href="#contact" class="cta-btn">Contact Us</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <!-- Background Image with Zoom Animation -->
-        <img src="https://z-cdn-media.chatglm.cn/files/de69ec8a-e6e4-4ad7-9bcb-297c4f0f2315.png?auth_key=1869502563-7dc6e4a8d8b24744a976193bb39635b7-0-34c816abef0a482053e9b0934dc0418b" class="hero-bg-image" alt="Night city skyline featuring Big 4 buildings">
-
-        <!-- SVG Animation Layer (Data Lines) -->
-        <svg class="hero-bg-anim" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice">
-            <defs>
-                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#003366;stop-opacity:0" />
-                    <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.3" />
-                </linearGradient>
-            </defs>
-            <!-- Animated Line Chart -->
-            <path d="M0,800 L200,600 L400,650 L600,400 L800,450 L1000,200 L1200,300 L1440,100" 
-                  fill="none" stroke="url(#grad1)" stroke-width="2" 
-                  style="stroke-dasharray: 2000; stroke-dashoffset: 2000; animation: drawLine 4s ease-out forwards infinite alternate;">
-            </path>
-            <!-- Animated Nodes -->
-            <circle cx="200" cy="600" r="4" fill="#d4af37" style="animation: floatNode 4s ease-in-out infinite;">
-                <animate attributeName="opacity" values="0.2;1;0.2" dur="4s" repeatCount="indefinite" />
-            </circle>
-            <circle cx="600" cy="400" r="6" fill="#ffffff" style="animation: floatNode 5s ease-in-out infinite;">
-                <animate attributeName="opacity" values="0.2;1;0.2" dur="5s" repeatCount="indefinite" />
-            </circle>
-            <circle cx="1000" cy="200" r="5" fill="#d4af37" style="animation: floatNode 6s ease-in-out infinite;">
-                 <animate attributeName="opacity" values="0.2;1;0.2" dur="6s" repeatCount="indefinite" />
-            </circle>
-            <!-- Grid Lines -->
-            <line x1="0" y1="600" x2="1440" y2="600" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
-            <line x1="0" y1="400" x2="1440" y2="400" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
-            <line x1="0" y1="200" x2="1440" y2="200" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
-        </svg>
-
-        <!-- Dark Overlay (for readability) -->
-        <div class="hero-overlay"></div>
-
-        <!-- Hero Content -->
-        <div class="container hero-content">
-            <h1>Expertise You Can Trust.</h1>
-            <p>Providing accounting, tax, and corporate services in Saudi Arabia & Bahrain with Big-4 firm experience.</p>
-            <a href="#contact" class="hero-btn">Partner With Us</a>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <div class="container">
-        <div class="stats-bar reveal">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3 data-target="15">0</h3>
-                    <span>Years Experience</span>
-                </div>
-                <div class="stat-item">
-                    <h3 data-target="200">0</h3>
-                    <span>Clients Served</span>
-                </div>
-                <div class="stat-item">
-                    <h3 data-target="100">0</h3>
-                    <span>% Compliance</span>
-                </div>
-                <div class="stat-item">
-                    <h3 data-target="10">0</h3>
-                    <span>Big 4 Alumni</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- About Section -->
-    <section id="about" class="section-padding bg-white">
+    <section class="services-section">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-text reveal">
-                    <h2>About Us</h2>
-                    <div class="credentials">
-                        <span class="badge"><i class="fa-solid fa-certificate"></i> ICAEW (ACA)</span>
-                        <span class="badge"><i class="fa-solid fa-award"></i> ACCA (FCCA)</span>
-                    </div>
-                    <p><strong>Big4 Consultancy</strong> is a premier professional advisory firm providing accounting, tax, and corporate services in Saudi Arabia.</p>
-                    <p>Our team consists of qualified Chartered Accountants and consultants with <strong>Big-4 firm experience</strong> and strong local regulatory knowledge. We support local and international businesses with compliance, structuring, and financial advisory services, helping them operate efficiently while meeting all Saudi regulatory requirements.</p>
-                    <p>Our focus is on practical solutions, regulatory compliance, and long-term client relationships.</p>
-                </div>
-                
-                <!-- 2D SLIDER -->
-                <div class="about-slider-container reveal delay-200">
-                    <div class="slides-track" id="slidesTrack">
-                        <!-- Slide 1 -->
-                        <div class="slide">
-                            <img src="https://z-cdn-media.chatglm.cn/files/ad125ff1-61b2-45a0-ab73-a26c137b4d2b.png?auth_key=1869502906-2423c120276e49c0acfb9a276ebb015e-0-57193764f7c5d4c7dbdd6dfede35fefd" alt="Modern office workstation">
-                            <div class="slide-caption">Professional Environment</div>
-                        </div>
-                        
-                        <!-- Slide 2 -->
-                        <div class="slide">
-                            <img src="https://z-cdn-media.chatglm.cn/files/0169a20a-e091-4a97-a0cd-032b4e6b03f0.png?auth_key=1869502906-a70cc276dc7b4ba3965eba1767748ca0-0-a03d2b319cdac5216f895a70e26402d0" alt="Five people discussing data charts">
-                            <div class="slide-caption">Collaboration</div>
-                        </div>
-                        
-                        <!-- Slide 3 -->
-                        <div class="slide">
-                            <img src="https://z-cdn-media.chatglm.cn/files/c271ce3c-f7c6-46b1-bd1d-4c907cc9a485.png?auth_key=1869502906-093f014c9cb74cc79a2490df40b82d85-0-7fb62ddc9574542ca50fd8823030828d" alt="Modern glass office building at night">
-                            <div class="slide-caption">Regional Presence</div>
-                        </div>
-                    </div>
-
-                    <!-- Controls -->
-                    <button class="nav-btn prev-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-                    <button class="nav-btn next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
-
-                    <!-- Dots -->
-                    <div class="slider-dots" id="sliderDots"></div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="section-padding bg-light">
-        <div class="container">
-            <div class="text-center reveal">
+            <header class="section-header">
                 <h2>Our Services</h2>
-                <p>Practical, compliant, and aligned with current regulations.</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card reveal delay-100">
-                    <div class="icon-box"><i class="fa-solid fa-file-invoice-dollar"></i></div>
-                    <h3>Tax Advisory</h3>
-                    <p>Professional tax advisory to help businesses understand and manage their tax obligations in Saudi Arabia.</p>
-                </div>
-                <div class="service-card reveal delay-200">
-                    <div class="icon-box"><i class="fa-solid fa-building-columns"></i></div>
-                    <h3>Corporate Tax</h3>
-                    <p>Managing corporate tax registrations, filings, and compliance ensuring timely and accurate submissions.</p>
-                </div>
-                <div class="service-card reveal delay-300">
-                    <div class="icon-box"><i class="fa-solid fa-hand-holding-dollar"></i></div>
-                    <h3>Zakat Services</h3>
-                    <p>End-to-end Zakat compliance services, including calculation, filing, review support, and liaison with ZATCA.</p>
-                </div>
-                <div class="service-card reveal delay-100">
-                    <div class="icon-box"><i class="fa-solid fa-percent"></i></div>
-                    <h3>VAT Services</h3>
-                    <p>Registration, return filing, advisory, compliance reviews, and support during audits.</p>
-                </div>
-                <div class="service-card reveal delay-200">
-                    <div class="icon-box"><i class="fa-solid fa-sitemap"></i></div>
-                    <h3>Corporate Structuring</h3>
-                    <p>Designing effective corporate structures that support growth and operational efficiency.</p>
-                </div>
-                <div class="service-card reveal delay-300">
-                    <div class="icon-box"><i class="fa-solid fa-clipboard-check"></i></div>
-                    <h3>Incorporation</h3>
-                    <p>Assisting local and foreign investors with company incorporation, licensing, and regulatory approvals.</p>
-                </div>
-                 <div class="service-card reveal delay-100">
-                    <div class="icon-box"><i class="fa-solid fa-users-gear"></i></div>
-                    <h3>Social Security</h3>
-                    <p>GOSI registration, monthly compliance, employee updates, and regulatory reporting.</p>
-                </div>
-                <div class="service-card reveal delay-200">
-                    <div class="icon-box"><i class="fa-solid fa-money-bill-transfer"></i></div>
-                    <h3>Withholding Tax</h3>
-                    <p>Assistance with withholding tax calculations, filings, and compliance for cross-border payments.</p>
-                </div>
-                <div class="service-card reveal delay-300">
-                    <div class="icon-box"><i class="fa-solid fa-user-tie"></i></div>
-                    <h3>CFO Services</h3>
-                    <p>Financial planning, budgeting, cash flow management, reporting, and strategic decision-making.</p>
-                </div>
-                <div class="service-card reveal delay-100">
-                    <div class="icon-box"><i class="fa-solid fa-book-journal-whills"></i></div>
-                    <h3>Bookkeeping</h3>
-                    <p>Reliable monthly accounts, financial reporting, and management reports tailored to your needs.</p>
-                </div>
-                <div class="service-card reveal delay-200">
-                    <div class="icon-box"><i class="fa-solid fa-calculator"></i></div>
-                    <h3>Actuarial Services</h3>
-                    <p>Employee benefit calculations, end-of-service benefits, and actuarial requirements.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                <p>Comprehensive financial solutions tailored to your business needs.</p>
+            </header>
 
-    <!-- Clients Section -->
-    <section id="clients" class="section-padding clients-section">
-        <div class="container reveal">
-            <h2>Our Clients</h2>
-            <p>We serve local and international companies across various industries, including trading, manufacturing, services, construction, retail, and professional services.</p>
-            
-            <div class="client-values">
-                <span class="value-pill">Practical Approach</span>
-                <span class="value-pill">Regulatory Expertise</span>
-                <span class="value-pill">Responsive Support</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col reveal">
-                    <h3>Big4 Consultancy</h3>
-                    <p style="color: #aaa; margin-bottom: 20px;">
-                        World-class financial expertise with local Saudi insight. Bridging the gap between global standards and local regulations.
-                    </p>
-                    <div style="display: flex; gap: 15px;">
-                        <a href="#" style="color: #fff; font-size: 1.2rem;"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="#" style="color: #fff; font-size: 1.2rem;"><i class="fa-brands fa-twitter"></i></a>
+            <div class="accordion">
+                
+                <!-- Service Item 1 -->
+                <article class="service-item">
+                    <button class="service-header" aria-expanded="false">
+                        <span class="service-title">Tax Advisory</span>
+                        <span class="icon-chevron">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="service-content">
+                        <div class="content-inner">
+                            <p>We provide strategic tax planning and advisory to optimize your tax position while ensuring full compliance with local regulations. Our experts help navigate complex tax landscapes to minimize liabilities legally.</p>
+                        </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="footer-col reveal delay-200">
-                    <h3>Contact Partner</h3>
-                    <ul class="contact-info">
-                        <li>
-                            <i class="fa-solid fa-user"></i>
-                            <div>
-                                <strong>Zaman Iqbal</strong>
-                                ACA (ICAEW) FCCA
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-phone"></i>
-                            <div>
-                                <strong>Phone</strong>
-                                +966 56 999 8444
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-envelope"></i>
-                            <div>
-                                <strong>Email</strong>
-                                zaman@big4c.com
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                <!-- Service Item 2 -->
+                <article class="service-item">
+                    <button class="service-header" aria-expanded="false">
+                        <span class="service-title">Corporate Tax</span>
+                        <span class="icon-chevron">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="service-content">
+                        <div class="content-inner">
+                            <p>Comprehensive management of corporate tax obligations including registration, filings, and compliance. We ensure timely and accurate submissions to regulatory authorities, keeping your business penalty-free.</p>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="footer-col reveal delay-300">
-                    <h3>Location</h3>
-                    <ul class="contact-info">
-                        <li>
-                            <i class="fa-solid fa-location-dot"></i>
-                            <div>
-                                <strong>Regions Served</strong>
-                                Saudi Arabia & Bahrain
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-clock"></i>
-                            <div>
-                                <strong>Working Hours</strong>
-                                Sun - Thu: 9:00 AM - 6:00 PM
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                &copy; 2026 Big4 Consultancy. All Rights Reserved.
+                <!-- Service Item 3 -->
+                <article class="service-item">
+                    <button class="service-header" aria-expanded="false">
+                        <span class="service-title">Zakat Services</span>
+                        <span class="icon-chevron">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="service-content">
+                        <div class="content-inner">
+                            <p>End-to-end Zakat compliance services including calculation, filing, and review support. We act as a liaison with ZATCA to ensure your Zakat obligations are met precisely according to Islamic principles and Saudi regulations.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Service Item 4 -->
+                <article class="service-item">
+                    <button class="service-header" aria-expanded="false">
+                        <span class="service-title">VAT Services</span>
+                        <span class="icon-chevron">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="service-content">
+                        <div class="content-inner">
+                            <p>Full support for Value Added Tax including registration, periodic return filing, advisory on local vs. standard rates, and assistance during VAT audits to ensure compliance.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Service Item 5 -->
+                <article class="service-item">
+                    <button class="service-header" aria-expanded="false">
+                        <span class="service-title">Corporate Structuring</span>
+                        <span class="icon-chevron">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="service-content">
+                        <div class="content-inner">
+                            <p>We design effective corporate structures that support business growth, operational efficiency, and risk mitigation. Whether expanding locally or internationally, we ensure the structure is fit for purpose.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Service Item 6 -->
+                <article class="service-item">
+                    <button class="service-header" aria-expanded="false">
+                        <span class="service-title">Incorporation</span>
+                        <span class="icon-chevron">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+                    <div class="service-content">
+                        <div class="content-inner">
+                            <p>Assisting local and foreign investors with the complete process of company incorporation, trade name reservation, licensing, and obtaining necessary regulatory approvals from SAGIA and other authorities.</p>
+                        </div>
+                    </div>
+                </article>
+
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
-
 </html>
