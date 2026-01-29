@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- DATA SOURCE (From Uploaded Document) ---
+    // --- DATA SOURCE ---
     const servicesData = [
         {
             id: 'tax-advisory',
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 {
                     heading: 'Comprehensive GOSI Compliance Services',
                     list: [
-                        '<strong>GOSI Registration & Employer Setup:</strong> We assist businesses with employer registration under GOSI and ensure correct setup from the start.',
+                        '<strong>GOSI Registration & Employer Setup:</strong> We assist businesses with employer registration under GOSI and ensure correct setup from start.',
                         '<strong>Employee Registration & Updates:</strong> We manage employee registrations, additions, removals, and salary updates in accordance with Saudi labor and GOSI regulations.',
                         '<strong>Monthly GOSI Compliance & Reporting:</strong> We handle monthly GOSI calculations and submissions, ensuring accurate contributions and timely compliance.',
                         '<strong>GOSI Audit & Inquiry Support:</strong> We support businesses during GOSI inspections, reviews, and inquiries, including documentation support and professional responses.'
@@ -236,18 +236,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- RENDER SERVICES GRID ---
     const servicesGrid = document.getElementById('services-grid');
-    servicesData.forEach(service => {
-        const card = document.createElement('div');
-        card.className = 'service-card reveal';
-        card.innerHTML = `
-            <div class="icon-box"><i class="fa-solid ${service.icon}"></i></div>
-            <h3>${service.title}</h3>
-            <p>${service.intro.substring(0, 100)}...</p>
-            <span class="read-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-        `;
-        card.addEventListener('click', () => openService(service.id));
-        servicesGrid.appendChild(card);
-    });
+    if(servicesGrid) {
+        servicesData.forEach(service => {
+            const card = document.createElement('div');
+            card.className = 'service-card reveal';
+            card.innerHTML = `
+                <div>
+                    <div class="icon-box"><i class="fa-solid ${service.icon}"></i></div>
+                    <h3>${service.title}</h3>
+                    <p>${service.intro.substring(0, 120)}...</p>
+                </div>
+                <span class="read-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+            `;
+            card.addEventListener('click', () => openService(service.id));
+            servicesGrid.appendChild(card);
+        });
+    }
 
     // --- NAVIGATION LOGIC ---
     const mobileBtn = document.getElementById('mobile-menu-btn');
@@ -255,42 +259,51 @@ document.addEventListener('DOMContentLoaded', () => {
     const navItems = document.querySelectorAll('.nav-links a');
 
     // Mobile Menu Toggle
-    mobileBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        const icon = mobileBtn.querySelector('i');
-        if(navLinks.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-xmark');
-        } else {
-            icon.classList.remove('fa-xmark');
-            icon.classList.add('fa-bars');
-        }
-    });
-
-    // Close mobile menu on link click
-    navItems.forEach(item => {
-        item.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            mobileBtn.querySelector('i').classList.remove('fa-xmark');
-            mobileBtn.querySelector('i').classList.add('fa-bars');
+    if(mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileBtn.querySelector('i');
+            if(navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
         });
-    });
+
+        // Close mobile menu on link click
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileBtn.querySelector('i').classList.remove('fa-xmark');
+                mobileBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+    }
 
     // --- VIEW SWITCHING LOGIC (SPA) ---
     const homeView = document.getElementById('home-view');
     const serviceView = document.getElementById('service-view');
-    const detailTitle = document.getElementById('detail-title');
-    const detailSubtitle = document.getElementById('detail-subtitle');
+    
+    // Banner Elements
+    const detailTitle = document.getElementById('service-banner-title');
+    const detailSubtitle = document.getElementById('service-banner-subtitle');
+    const detailIcon = document.getElementById('service-banner-icon');
     const detailContent = document.getElementById('detail-content');
 
     window.openService = function(serviceId) {
         const service = servicesData.find(s => s.id === serviceId);
         if (!service) return;
 
-        // Populate Content
-        detailTitle.innerHTML = `<i class="fa-solid ${service.icon}"></i> ${service.title}`;
-        detailSubtitle.textContent = service.subtitle;
+        // Update Banner Content
+        if(detailTitle) detailTitle.textContent = service.title;
+        if(detailSubtitle) detailSubtitle.textContent = service.subtitle;
         
+        // Update Icon class
+        if(detailIcon) detailIcon.className = `fa-solid ${service.icon} banner-icon`;
+        
+        // Populate Main Content
         let contentHTML = `<p class="fade-in">${service.intro}</p>`;
         
         service.sections.forEach(section => {
@@ -311,21 +324,33 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
-        detailContent.innerHTML = contentHTML;
+        if(detailContent) detailContent.innerHTML = contentHTML;
 
         // Switch Views
-        homeView.classList.add('hidden');
-        serviceView.classList.remove('hidden');
-        serviceView.classList.add('fade-in');
+        if(homeView) homeView.classList.add('hidden');
+        if(serviceView) {
+            serviceView.classList.remove('hidden');
+            serviceView.classList.add('fade-in');
+        }
         window.scrollTo(0, 0);
     };
 
     window.goHome = function() {
-        serviceView.classList.add('hidden');
-        homeView.classList.remove('hidden');
-        homeView.classList.add('fade-in');
+        if(serviceView) serviceView.classList.add('hidden');
+        if(homeView) {
+            homeView.classList.remove('hidden');
+            homeView.classList.add('fade-in');
+        }
         window.scrollTo(0, 0);
     };
+
+    window.scrollToContact = function() {
+        goHome();
+        setTimeout(() => {
+            const contactSection = document.getElementById('contact');
+            if(contactSection) contactSection.scrollIntoView();
+        }, 100);
+    }
 
     // --- INTERSECTION OBSERVER FOR SCROLL ANIMATIONS ---
     const revealElements = document.querySelectorAll('.reveal');
@@ -385,60 +410,70 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalSlides = slides.length;
     let autoPlayInterval;
 
-    // Initialize Dots
-    slides.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        if(index === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(index));
-        dotsContainer.appendChild(dot);
-    });
-
-    const dots = document.querySelectorAll('.dot');
-
-    function updateSlider() {
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        dots.forEach((dot, index) => {
-            if(index === currentIndex) dot.classList.add('active');
-            else dot.classList.remove('active');
+    // Only initialize if slider elements exist
+    if(track && slides.length > 0) {
+        // Initialize Dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if(index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
         });
-    }
 
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        updateSlider();
-        resetAutoPlay();
-    }
+        const dots = document.querySelectorAll('.dot');
 
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        updateSlider();
-        resetAutoPlay();
-    }
+        function updateSlider() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((dot, index) => {
+                if(index === currentIndex) dot.classList.add('active');
+                else dot.classList.remove('active');
+            });
+            
+            // Handle zoom effect for visual flair
+            slides.forEach(slide => slide.classList.remove('active'));
+            if(slides[currentIndex]) slides[currentIndex].classList.add('active');
+        }
 
-    function goToSlide(index) {
-        currentIndex = index;
-        updateSlider();
-        resetAutoPlay();
-    }
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlider();
+            resetAutoPlay();
+        }
 
-    function startAutoPlay() {
-        autoPlayInterval = setInterval(nextSlide, 5000);
-    }
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateSlider();
+            resetAutoPlay();
+        }
 
-    function resetAutoPlay() {
-        clearInterval(autoPlayInterval);
+        function goToSlide(index) {
+            currentIndex = index;
+            updateSlider();
+            resetAutoPlay();
+        }
+
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(nextSlide, 5000);
+        }
+
+        function resetAutoPlay() {
+            clearInterval(autoPlayInterval);
+            startAutoPlay();
+        }
+
+        // Event Listeners
+        if(nextBtn) nextBtn.addEventListener('click', nextSlide);
+        if(prevBtn) prevBtn.addEventListener('click', prevSlide);
+        
+        const sliderContainer = document.querySelector('.about-slider-container');
+        if(sliderContainer) {
+            sliderContainer.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+            sliderContainer.addEventListener('mouseleave', startAutoPlay);
+        }
+
+        // Start slider
         startAutoPlay();
     }
-
-    // Event Listeners
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
-    
-    const sliderContainer = document.querySelector('.about-slider-container');
-    sliderContainer.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
-    sliderContainer.addEventListener('mouseleave', startAutoPlay);
-
-    startAutoPlay();
 
 });
