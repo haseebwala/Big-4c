@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Big4 Consultancy | Saudi Arabia & Bahrain</title>
+    <meta name="description" content="Providing accounting, tax, and corporate services in Saudi Arabia & Bahrain with Big-4 firm experience.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -30,6 +31,7 @@
             </div>
             <nav class="nav-links" id="nav-links">
                 <a href="#" onclick="goHome()">Home</a>
+                <a href="#about" onclick="goHome()">About</a>
                 <a href="#services" onclick="goHome()">Services</a>
                 <a href="#clients" onclick="goHome()">Clients</a>
                 <a href="#contact" class="cta-btn">Contact Us</a>
@@ -41,11 +43,12 @@
     <div id="home-view">
         <!-- Hero Section -->
         <section class="hero">
+            <!-- 2D Animated Background SVG -->
             <svg class="hero-bg-anim" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice">
                 <defs>
                     <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" style="stop-color:#003366;stop-opacity:0" />
-                        <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.5" />
+                        <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.4" />
                     </linearGradient>
                 </defs>
                 <!-- Animated Line -->
@@ -64,15 +67,20 @@
                 </circle>
                 
                 <!-- Background Grid Lines -->
-                <line x1="0" y1="600" x2="1440" y2="600" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1" />
-                <line x1="0" y1="400" x2="1440" y2="400" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1" />
-                <line x1="0" y1="200" x2="1440" y2="200" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1" />
+                <line x1="0" y1="600" x2="1440" y2="600" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
+                <line x1="0" y1="400" x2="1440" y2="400" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
+                <line x1="0" y1="200" x2="1440" y2="200" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
             </svg>
             <div class="hero-overlay"></div>
             <div class="container hero-content">
                 <h1>Expertise You Can Trust.</h1>
                 <p>Providing accounting, tax, and corporate services in Saudi Arabia & Bahrain with Big-4 firm experience.</p>
-                <a href="#contact" class="hero-btn">Partner With Us</a>
+                <div class="hero-buttons">
+                    <a href="#contact" class="hero-btn">Partner With Us</a>
+                    <a href="https://www.linkedin.com/in/zaman-iqbal-fcca-aca-icaew-bfp-bsc-hon-57ba0010" target="_blank" class="hero-btn-linkedin">
+                        <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -100,7 +108,7 @@
             </div>
         </div>
 
-        <!-- About Section WITH UPDATED SLIDER -->
+        <!-- About Section WITH 2D SLIDER -->
         <section id="about" class="section-padding">
             <div class="container">
                 <div class="about-grid">
@@ -118,17 +126,33 @@
                     <!-- 2D SLIDER START -->
                     <div class="about-slider-container reveal delay-200">
                         <div class="slides-track" id="slidesTrack">
-                            <!-- Slide 1: Office Workstation -->
-                            <div class="slide">
-                                <img src="https://z-cdn-media.chatglm.cn/files/16000fd2-dde2-44a7-9f49-7f8a6ef0d57c.png?auth_key=1869496171-97e5d7f674bc46a6be5cc92a83bd9b51-0-b6c3434371bbdf48b61e3aaf5d7d5a4c" alt="Office professional at workstation with multiple monitors">
+                            <!-- Slide 1: The "First One" - Business Meeting -->
+                            <div class="slide active">
+                                <img src="https://z-cdn-media.chatglm.cn/files/184d3dbc-af40-4e71-b7ca-00ae1c0ef253.png?auth_key=1869705557-11d05db015a24e9289d4872c92d742e3-0-a1e1fa726abd22a03fe0eed39ca613a7" alt="Business Meeting">
                             </div>
-                            <!-- Slide 2: Team Meeting -->
+                            <!-- Slide 2: AX Architecture -->
                             <div class="slide">
-                                <img src="https://z-cdn-media.chatglm.cn/files/3d39c0c3-15c1-4c7e-abcf-4c9baed95659.png?auth_key=1869497011-72b190c080584b0d943963b255fb37b1-0-cf8e93afee10506b12b119e9945c8b2b" alt="Five people discussing data around a round table">
+                                <img src="https://z-cdn-media.chatglm.cn/files/3ec04c4f-2260-4cdf-9ae3-0d6be588eb70.png?auth_key=1869705557-57467bb42697412d8fac0c9a8b267ac0-0-3bcaec1ebbc7da7bdeb7080b8ff15509" alt="Architecture Planning">
                             </div>
-                            <!-- Slide 3: City Building -->
+                            <!-- Slide 3: Zakat Services -->
                             <div class="slide">
-                                <img src="https://z-cdn-media.chatglm.cn/files/f84a85c6-750f-48c7-bef2-431a6d1a1a93.png?auth_key=1869497011-2384ba610fd44f25b83d6310589a5ec3-0-f8107a20599c30ff3eb5bda684ba5d1c" alt="Modern glass office building at night in the city">
+                                <img src="https://z-cdn-media.chatglm.cn/files/64d4b753-08d4-406e-9ad8-f70fdfdf71ce.png?auth_key=1869705557-a2d83f75b8a04c5ab2bf959f0072b4ac-0-8bfc937fe274ed7b1dd29c4b54281cf3" alt="Zakat Services">
+                            </div>
+                             <!-- Slide 4: VAT Services -->
+                             <div class="slide">
+                                <img src="https://z-cdn-media.chatglm.cn/files/3e76baf9-6c86-491e-a1fc-c7ba99fb7751.png?auth_key=1869705557-950e9e602c6042b0a33cfca01d3fc0b1-0-af0b1dfc6d925f37e03345e78337fd80" alt="VAT Services">
+                            </div>
+                             <!-- Slide 5: Withholding Tax -->
+                             <div class="slide">
+                                <img src="https://z-cdn-media.chatglm.cn/files/509da350-bbe7-44b4-8b6b-4677f28c8e9c.png?auth_key=1869705557-98c157a12fa14fac99e7f61d56990936-0-9afd5aaea7f6334791226333dafe55c1" alt="Withholding Tax">
+                            </div>
+                             <!-- Slide 6: GOSI Compliance -->
+                             <div class="slide">
+                                <img src="https://z-cdn-media.chatglm.cn/files/75ea9fad-09a4-41ce-9a9b-8ced971ce257.png?auth_key=1869705557-08bd20a3d14c4b6082457acad6d2403a-0-3f089c32a94ed145674cc07ccbc17310" alt="GOSI Compliance">
+                            </div>
+                             <!-- Slide 7: Bookkeeping -->
+                             <div class="slide">
+                                <img src="https://z-cdn-media.chatglm.cn/files/0f443b5d-3cc5-404a-bfd9-b101de99e24c.png?auth_key=1869705557-86bed3c9632546c1928bd3511fd0c7f5-0-4b271c9e1925d2b4d0d63dbe8152d0fe" alt="Bookkeeping">
                             </div>
                         </div>
 
@@ -186,14 +210,27 @@
 
                     <div class="footer-col reveal delay-200">
                         <h3>Contact Partner</h3>
+                        
+                        <!-- Reference Style LinkedIn Profile Card -->
+                        <div class="linkedin-profile-card">
+                            <div class="partner-img-wrapper">
+                                <!-- IMAGE UPDATED: Using the provided Zaman Iqbal photo -->
+                                <img src="https://z-cdn-media.chatglm.cn/files/26b6fb6c-1323-46fe-ba3b-65de15316c2d.png?auth_key=1869681441-6f7f219ed8f74fc2bd8c0ea7b56faec5-0-7b4102490e44c418031d3bd269d747db" 
+                                     alt="Zaman Iqbal - Partner">
+                            </div>
+                            <div class="partner-info">
+                                <h4>Zaman Iqbal</h4>
+                                <p>ACA (ICAEW) FCCA</p>
+                                <a href="https://www.linkedin.com/in/zaman-iqbal-fcca-aca-icaew-bfp-bsc-hon-57ba0010"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="linkedin-connect-btn">
+                                    <i class="fa-brands fa-linkedin"></i> Connect
+                                </a>
+                            </div>
+                        </div>
+
                         <ul class="contact-info">
-                            <li>
-                                <i class="fa-solid fa-user"></i>
-                                <div>
-                                    <strong>Zaman Iqbal</strong>
-                                    ACA (ICAEW) FCCA
-                                </div>
-                            </li>
                             <li>
                                 <i class="fa-solid fa-phone"></i>
                                 <div>
@@ -242,15 +279,28 @@
 
     <!-- === SERVICE DETAIL VIEW (DYNAMIC) === -->
     <div id="service-view" class="hidden">
-        <div class="service-header">
+        
+        <!-- FULL WIDTH BANNER -->
+        <div class="service-hero-banner">
             <div class="container">
-                <a href="#" onclick="goHome()" class="back-btn" style="color:white; border-color:white; margin-bottom: 20px; display:inline-block;">
+                <!-- Navigation Button -->
+                <a href="#" onclick="goHome()" class="banner-nav-btn">
                     <i class="fa-solid fa-arrow-left"></i> Back to Home
                 </a>
-                <h1 id="detail-title">Service Title</h1>
-                <p id="detail-subtitle" style="color: #ccc; font-size: 1.2rem;">Service subtitle goes here</p>
+                
+                <!-- Content -->
+                <div class="banner-content-wrapper">
+                    <div class="banner-heading-row">
+                        <i id="service-banner-icon" class="fa-solid fa-file-invoice-dollar banner-icon"></i>
+                        <h1 id="service-banner-title" class="banner-title">Tax Advisory Services</h1>
+                    </div>
+                    <p id="service-banner-subtitle" class="banner-subtitle">
+                        Expert Saudi Tax Advisors with Practical Business Insight
+                    </p>
+                </div>
             </div>
         </div>
+        <!-- END BANNER -->
 
         <div class="container section-padding">
             <div class="detail-grid">
@@ -263,7 +313,7 @@
                 <aside class="detail-sidebar">
                     <h3>Need Assistance?</h3>
                     <p style="font-size: 0.9rem;">Our team is ready to help you navigate these requirements efficiently.</p>
-                    <div class="contact-btn" onclick="document.querySelector('#home-view #contact').scrollIntoView();goHome();">
+                    <div class="contact-btn" onclick="scrollToContact()">
                         Contact Us
                     </div>
                 </aside>
@@ -280,7 +330,7 @@
         </footer>
     </div>
 
-    <!-- Custom JS -->
-    <script src="js/main.js" defer></script>
+    <!-- Custom Scripts -->
+    <script src="script.js" defer></script>
 </body>
 </html>
